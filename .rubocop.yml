@@ -1,0 +1,32 @@
+Metrics/BlockLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+
+Style/PercentLiteralDelimiters:
+  Exclude:
+    - 'config/routes.rb'
+
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/content_security_policy.rb'
+
+AllCops:
+  TargetRubyVersion: 3.0.1
+  SuggestExtensions: false
+  NewCops: disable
+
+  Exclude:
+    - db/schema.rb
+    - Gemfile
+    - 'bin/**/*'
+    - 'config/**/*'
+
+Lint/MissingSuper:
+  Enabled: false
