@@ -1,5 +1,5 @@
-class RecipesController < ApplicationController
-  def index
+# frozen_string_literal: true
 
-  end
+class RecipesController < ApplicationController
+  def index; end
 end
