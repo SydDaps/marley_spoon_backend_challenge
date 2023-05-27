@@ -11,8 +11,10 @@ class ContentfulClient
     @client.entries(content_type: 'recipe')
   end
 
-  def recipe(content_id)
-    @client.entry(content_id)
+  def recipe(recipe_id)
+    Rails.cache.fetch("recipe_id_#{content_id}", expires_in: 12.hours) do
+      @client.entry(recipe_id)
+    end
   end
 
   private
