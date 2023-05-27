@@ -31,7 +31,6 @@ RSpec.describe RecipesController, type: :controller do
     end
 
     it 'renders the index view if recipe is not found', :vcr do
-
       get :show, params: { id: 'dsfrgfrgdsfgdfs' }
 
       expect(response).to redirect_to('/')
