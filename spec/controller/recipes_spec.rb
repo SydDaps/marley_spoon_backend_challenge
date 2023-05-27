@@ -29,5 +29,12 @@ RSpec.describe RecipesController, type: :controller do
 
       expect(response.body).to include('Tofu Saag Paneer with Buttery Toasted Pita')
     end
+
+    it 'renders the index view if recipe is not found', :vcr do
+
+      get :show, params: { id: 'dsfrgfrgdsfgdfs' }
+
+      expect(response).to redirect_to('/')
+    end
   end
 end
