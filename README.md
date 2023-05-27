@@ -1,7 +1,7 @@
 # README
 This project utilizes the Contentful API to fetch recipes
 
-To clone this project
+To start this project
 - Create an application.yml file in the config directory.
 - Copy the contents of application_temp.yml into application.yml.
 - Replace the placeholder values in application.yml with your actual environment variables.
