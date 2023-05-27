@@ -5,13 +5,13 @@ require 'rails_helper'
 RSpec.describe ContentfulClient do
   let(:mock_entries) { Contentful::Array.new({}) }
 
-  it 'should return all recipes in Contentful::Array class' do
+  it 'should return all recipes in Contentful::Array class', :vcr do
     recipes = ContentfulClient.instance.recipes
 
     expect(recipes.class).to eq(Contentful::Array)
   end
 
-  it 'should return recipe with content id' do
+  it 'should return recipe with content id', :vcr do
     recipe = ContentfulClient.instance.recipe '4dT8tcb6ukGSIg2YyuGEOm'
     expect(recipe.title).to eq('White Cheddar Grilled Cheese with Cherry Preserves & Basil')
   end
