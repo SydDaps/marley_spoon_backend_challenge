@@ -1,0 +1,19 @@
+<div class="recipe_index">
+  <h1><%= @recipe.fields[:title] %></h1>
+  <img src="<%= @recipe.fields[:photo]&.url %>" width="200">
+  <h2>Description</h2>
+  <p><%= @recipe.fields[:description] %></p>
+  <% if @recipe.fields[:tags] %>
+    <h2>Tags</h2>
+    <% @recipe.tags.each do |tag| %>
+      <p> <%= tag.name %></p>
+    <% end %>
+  <% end %>
+
+  <% if @recipe.fields[:chef] %>
+    <h2>chef</h2>
+    <p><%= @recipe.fields[:chef].name %></p>
+    <%= link_to "<< back", root_path %>
+  <% end %>
+</div>
+

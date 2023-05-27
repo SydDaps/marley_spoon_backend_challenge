@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ContentfulClient
   include Singleton
 
@@ -14,6 +16,7 @@ class ContentfulClient
   end
 
   private
+
   def new_client
     Contentful::Client.new(
       space: ENV['SPACE_ID'],

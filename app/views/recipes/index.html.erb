@@ -1,0 +1,16 @@
+<div class="recipes_index">
+  <h1>Recipes List</h1>
+  <% if @recipes %>
+    <div class="ui list">
+      <% @recipes.each do |recipe| %>
+        <div class="item">
+        <a href="/recipes/<%= recipe.id %>">
+          <h3><%= recipe.title %></h3>
+          <img src="<%= recipe.photo.url %>" width="200">
+        </a>
+        </div>
+      <% end %>
+    </div>
+  <%end%>
+</div>
+
