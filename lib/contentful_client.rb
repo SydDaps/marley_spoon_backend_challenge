@@ -12,8 +12,12 @@ class ContentfulClient
   end
 
   def recipe(recipe_id)
-    Rails.cache.fetch("recipe_id_#{content_id}", expires_in: 12.hours) do
-      @client.entry(recipe_id)
+    recipe = @client.entry(recipe_id)
+
+    raise ApiException::RecipeNotFound, "recipe with id #{recipe_id} not found" unless recipe.present?
+
+    Rails.cache.fetch("recipe_id_#{recipe_id}", expires_in: 12.hours) do
+      recipe
     end
   end
 

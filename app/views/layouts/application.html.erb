@@ -12,6 +12,7 @@
 
   <body>
     <div class="ui container">
+      <%= render 'layouts/flash' unless flash.empty? %>
       <%= yield %>
     </div>
   </body>
